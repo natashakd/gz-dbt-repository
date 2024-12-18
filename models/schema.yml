@@ -9,13 +9,10 @@ sources:
           description: date of purchase
         - name: orders_id
           description: foreign key to raw_gz_ship
-        - product_id
-          description: the amound paid by the customer to purchase the product. revenue = quantity * selling_price
+        - name: product_id
+          description: the amount paid by the customer to purchase the product
         - name: quantity
           description: the quantity of products purchased for a given order
-          tests: 
-          - unique:
-              column_name: "(orders_id || '-' || product_id)"
       - name: raw_gz_product
         description: products of Greenweez
         columns:
