@@ -200,3 +200,56 @@ models:
         description: total number of ad clicks for the day
         tests:
           - not_null
+
+  - name: finance_campaigns_day
+    description: combined campaign and finance data by day
+    columns: 
+      - name: date_date
+        description: date
+        tests:
+          - not_null
+          - unique
+      - name: ads_margin
+        description: margin calculated as operational margin minus ads cost
+        tests:
+          - not_null
+      - name: average_basket
+        description: average basket size for the day
+        tests:
+          - not_null
+      - name: operational_margin
+        description: operational margin for the day
+        tests:
+          - not_null
+      - name: quantity
+        description: total quantity of items sold on the day
+        tests:
+          - not_null
+      - name: revenue
+        description: total revenue generated for the day
+        tests:
+          - not_null
+      - name: purchase_cost
+        description: total purchase cost for the day
+        tests:
+          - not_null
+      - name: shipping_fee
+        description: total shipping fees incurred for the day
+        tests:
+          - not_null
+      - name: log_cost
+        description: total logistics cost for the day
+        tests:
+          - not_null
+      - name: ads_cost
+        description: total cost of ads for the day
+        tests:
+          - not_null
+      - name: ads_impressions
+        description: total number of ad impressions for the day
+        tests:
+          - not_null
+      - name: ads_clicks
+        description: total number of ad clicks for the day
+        tests:
+          - not_null
