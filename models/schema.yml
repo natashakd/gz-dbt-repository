@@ -181,4 +181,22 @@ models:
         tests:
           - not_null
 
-      
+  - name: int_campaigns_day
+    description: campaign data by day
+    columns: 
+      - name: date_date
+        description: date of campaign
+        tests:
+          - not_null:
+      - name: ads_cost
+        description: cost of ads each day
+        tests:
+          - not_null
+      - name: ads_impressions
+        description:  total number of ad impressions for the day
+        tests:
+          - not_null
+      - name: ads_clicks
+        description: total number of ad clicks for the day
+        tests:
+          - not_null
