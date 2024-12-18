@@ -3,5 +3,41 @@ sources:
   - name: gz_raw_data
     tables:
       - name: raw_gz_sales
+        description: sales of Greenweez / one row per product_id found in each orders_id
+        columns:
+        - name: date_date
+          description: date of purchase
+        - name: orders_id
+          description: foreign key to raw_gz_ship
+        - product_id
+          description: the amound paid by the customer to purchase the product. revenue = quantity * selling_price
+        - name: quantity
+          description: the quantity of products purchased for a given order
+          tests: 
+          - unique:
+              column_name: "(orders_id || '-' || product_id)"
       - name: raw_gz_product
+        description: products of Greenweez
+        columns:
+        - name: products_id
+          description: primary key
+          tests:
+          - unique
+          - not_null
+        - name: purchase_price
+          description: the purchase price of the product
       - name: raw_gz_ship
+        description: shipping data for Greenweez orders
+        columns:
+        - name: orders_id
+          description: primary key
+          tests:
+          - unique
+          - not_null
+        - name: shipping_fee
+          description: the price the customer paid for shipping
+        - name: log_cost
+          description: the cost of preparing the parcel in the warehouse
+        - name: ship_cost
+          description: shipping cost paid by Greenweez to the carrier or logistics provider
+  
