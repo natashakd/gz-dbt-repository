@@ -1,3 +1,5 @@
+{{ config(materialized='view') }}
+
 SELECT *
 FROM {{ ref('stg_raw__adwords') }}
 UNION ALL
