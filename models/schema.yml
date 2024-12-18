@@ -187,7 +187,7 @@ models:
       - name: date_date
         description: date of campaign
         tests:
-          - not_null:
+          - not_null
       - name: ads_cost
         description: cost of ads each day
         tests:
